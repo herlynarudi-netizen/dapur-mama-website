@@ -1,4 +1,4 @@
-const API_URL = 'const API_URL = 'https://1707ca42-e4f6-47e5-9b4e-7a081dd0b4bd-00-ybr3codhkeiw.pike.replit.dev/api';';
+const API_URL = 'https://1707ca42-e4f6-47e5-9b4e-7a081dd0b4bd-00-ybr3codhkeiw.pike.replit.dev/api';
 
 // Elemen Form Tambah
 const addForm = document.getElementById('add-menu-form');
@@ -83,37 +83,20 @@ async function loadMenus() {
     }
 }
 
-// === FUNGSI openEditModal DENGAN KODE MATA-MATA ===
 async function openEditModal(id) {
-    console.log("MATA-MATA 1: Tombol Edit diklik. ID Menu:", id);
-    const fetchURL = `${API_URL}/menus/${id}`;
-    console.log("MATA-MATA 2: Mencoba mengambil data dari URL:", fetchURL);
-
     try {
-        const response = await fetch(fetchURL);
-        console.log("MATA-MATA 3: Menerima respons dari server:", response);
-
-        if (!response.ok) {
-            console.error("MATA-MATA 4: Respons server TIDAK OK! Status:", response.status, response.statusText);
-            throw new Error(`Server merespons dengan status ${response.status}`);
-        }
-        
+        const response = await fetch(`${API_URL}/menus/${id}`);
+        if (!response.ok) throw new Error('Gagal mengambil detail menu.');
         const menu = await response.json();
-        console.log("MATA-MATA 5: Berhasil mendapat data menu:", menu);
-        
         document.getElementById('edit-id').value = menu.id;
         document.getElementById('edit-name').value = menu.name;
         document.getElementById('edit-price').value = menu.price;
         document.getElementById('edit-category').value = menu.category;
-        
         editModal.style.display = 'flex';
-
     } catch (error) {
-        console.error("MATA-MATA 6: TERJADI ERROR di dalam blok catch:", error);
-        alert('Gagal mengambil detail menu. Cek tab Console untuk detail.');
+        alert('Gagal mengambil detail menu.');
     }
 }
-
 
 async function deleteMenu(id) {
     if (!confirm('Anda yakin ingin menghapus menu ini?')) return;

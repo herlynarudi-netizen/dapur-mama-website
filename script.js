@@ -1,6 +1,6 @@
 // --- Pengaturan Dasar ---
 const WHATSAPP_NUMBER = '6281312357574';
-const API_URL = 'const API_URL = 'https://1707ca42-e4f6-47e5-9b4e-7a081dd0b4bd-00-ybr3codhkeiw.pike.replit.dev/api';';
+const API_URL = 'https://1707ca42-e4f6-47e5-9b4e-7a081dd0b4bd-00-ybr3codhkeiw.pike.replit.dev/api';
 let cart = [];
 let menuData = [];
 
@@ -16,7 +16,7 @@ const locationStatus = document.getElementById('location-status');
 // --- FUNGSI UTAMA UNTUK MENGAMBIL & MENAMPILKAN MENU ---
 async function fetchAndDisplayMenus() {
     try {
-        const response = await fetch(API_URL);
+        const response = await fetch(API_URL + '/menus');
         if (!response.ok) throw new Error('Gagal mengambil data menu.');
         menuData = await response.json();
 
