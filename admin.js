@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/api';
+const API_URL = 'const API_URL = 'https://1707ca42-e4f6-47e5-9b4e-7a081dd0b4bd-00-ybr3codhkeiw.pike.replit.dev/api';';
 
 // Elemen Form Tambah
 const addForm = document.getElementById('add-menu-form');
