@@ -1,6 +1,6 @@
 // --- Pengaturan Dasar ---
 const WHATSAPP_NUMBER = '6281312357574';
-const API_URL = 'https://1707ca42-e4f6-47e5-9b4e-7a081dd0b4bd-00-ybr3codhkeiw.pike.replit.dev/api';
+const API_URL = '/api';
 let cart = [];
 let menuData = [];
 
