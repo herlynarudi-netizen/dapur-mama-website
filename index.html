@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAPUR MAMA - Menu Nasi Goreng Spesial</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <div id="cart-icon" class="cart-icon" onclick="toggleCart()">
+        <i class="fas fa-shopping-cart"></i>
+        <span id="cart-count">0</span>
+    </div>
+
+    <div id="cart-sidebar" class="cart-sidebar">
+        <h3>Keranjang Pesanan Anda</h3>
+        <div id="cart-items">
+        </div>
+        
+        <div class="customer-info">
+            <h4>Data Pengiriman</h4>
+            <input type="text" id="customer-name" placeholder="Nama Anda" required>
+            <textarea id="customer-address" placeholder="Alamat Lengkap Pengiriman" rows="2" required></textarea>
+            
+            <button class="btn secondary location-btn" onclick="getGeolocation()">
+                <i class="fas fa-map-marker-alt"></i> Share Lokasi Saat Ini
+            </button>
+            <input type="hidden" id="latitude">
+            <input type="hidden" id="longitude">
+            <p id="location-status" class="status-message">Lokasi belum diambil.</p>
+        </div>
+
+        <p class="cart-total">Total: <span id="cart-total-price">Rp 0</span></p>
+        <button class="btn secondary large" onclick="sendOrderViaWhatsApp()">PESAN SEKARANG</button>
+        <button class="btn primary" onclick="toggleCart()">Lanjut Belanja</button>
+    </div>
+
+    <div class="slider-container">
+        <div class="hero-title-overlay">
+            <h1>DAPUR MAMA</h1>
+        </div>
+        <div class="slider-wrapper" id="slider-wrapper">
+            <div class="slide">
+                <img src="images/slide1.jpg" alt="Promo Nasi Goreng">
+            </div>
+            <div class="slide">
+                <img src="images/slide2.jpg" alt="Menu Baru">
+            </div>
+            <div class="slide">
+                <img src="images/slide3.jpg" alt="Diskon Spesial">
+            </div>
+            <div class="slide">
+                <img src="images/slide4.jpg" alt="Review Pelanggan">
+            </div>
+            <div class="slide">
+                <img src="images/slide5.jpg" alt="Layanan Delivery">
+            </div>
+        </div>
+        <div class="slider-dots" id="slider-dots"></div>
+    </div>
+
+    <main class="container">
+        
+        <section id="makanan" class="menu-section">
+            <div class="category-main-header" onclick="toggleMainCategory(this)">
+                <h2 class="category-main-title">Kategori: Makanan</h2>
+                <i class="fas fa-chevron-up toggle-main-icon"></i>
+            </div>
+            
+            <div class="main-content-wrapper menu-grid"></div>
+
+        </section>
+        
+        <section id="minuman" class="menu-section minimized-main">
+            <div class="category-main-header" onclick="toggleMainCategory(this)">
+                <h2 class="category-main-title">Kategori: Minuman</h2>
+                <i class="fas fa-chevron-down toggle-main-icon"></i>
+            </div>
+
+            <div class="main-content-wrapper menu-grid"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Lokasi: JL K H Balqih Lrg Banten VI No 007 Rt/Rw 61/16 Seberang Ulu 2 Palembang | Pemesanan: <a href="https://wa.me/6281312357574" target="_blank">081312357574</a></p>
+        <p>© 2024 DAPUR MAMA. Semua Hak Dilindungi.</p>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>

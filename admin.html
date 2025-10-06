@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Dapur Mama</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; background-color: #1e1e1e; color: #f0f0f0; display: flex; justify-content: center; align-items: flex-start; min-height: 100vh; margin: 0; padding: 40px 20px; }
+        .admin-wrapper { width: 100%; max-width: 600px; }
+        .form-container { background-color: #2c2c2c; padding: 40px; border-radius: 12px; box-shadow: 0 8px 16px rgba(0,0,0,0.2); margin-bottom: 40px; }
+        h1, h2 { text-align: center; color: #E74C3C; }
+        h1 { margin-bottom: 30px; }
+        h2 { margin-bottom: 20px; border-top: 1px solid #444; padding-top: 30px; }
+        .form-group { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 8px; font-weight: 600; }
+        input, select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #555; background-color: #333; color: #f0f0f0; font-size: 1em; }
+        button { width: 100%; padding: 15px; border: none; border-radius: 8px; background-color: #2ECC71; color: white; font-size: 1.1em; font-weight: 600; cursor: pointer; transition: background-color 0.3s; }
+        button:hover { background-color: #27AE60; }
+        #status { text-align: center; margin-top: 20px; font-weight: 600; min-height: 1.5em;}
+        .menu-list-item { display: flex; align-items: center; background-color: #333; padding: 10px; border-radius: 8px; margin-bottom: 10px; }
+        .menu-list-item img { width: 50px; height: 50px; object-fit: cover; border-radius: 4px; margin-right: 15px; }
+        .menu-list-item p { flex-grow: 1; margin: 0; }
+        .delete-btn { background-color: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <div class="admin-wrapper">
+        <div class="form-container">
+            <h1>Tambah Menu Baru</h1>
+            <form id="add-menu-form">
+                <div class="form-group">
+                    <label for="name">Nama Menu</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="price">Harga (contoh: 15000)</label>
+                    <input type="number" id="price" name="price" required>
+                </div>
+                <div class="form-group">
+                    <label for="category">Kategori</label>
+                    <select id="category" name="category" required>
+                        <option value="makanan">Makanan</option>
+                        <option value="minuman">Minuman</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="menuImage">Gambar Menu</label>
+                    <input type="file" id="menuImage" name="menuImage" accept="image/*" required>
+                </div>
+                <button type="submit">Simpan Menu</button>
+            </form>
+            <p id="status"></p>
+        </div>
+
+        <div class="menu-list-container">
+            <h2>Daftar Menu Saat Ini</h2>
+            <div id="menu-list">
+                </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
